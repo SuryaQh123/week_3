@@ -10,17 +10,13 @@ What this script does:
 4. Calculates key metrics: total revenue, best-selling product, average order
    value, sales by region, and top customers
 5. Prints a clean, readable report to the terminal AND saves the same
-   report to analysis_report.md
-
-Author: (your name here)
+   report to analysis_report
 """
 
 import pandas as pd
 
 
-# ---------------------------------------------------------------------------
 # DAY 1 - Load the data
-# ---------------------------------------------------------------------------
 # pandas.read_csv() reads a CSV file the same way Excel opens a spreadsheet.
 # Every column becomes a "Series" and the whole table becomes a "DataFrame".
 def load_data(file_path):
@@ -30,9 +26,8 @@ def load_data(file_path):
     return df
 
 
-# ---------------------------------------------------------------------------
+
 # DAY 2 - Explore the data
-# ---------------------------------------------------------------------------
 # Before doing anything with data, it's good practice to actually look at it:
 # how many rows/columns are there, what type is each column, and what does
 # a sample of the data look like?
@@ -54,9 +49,7 @@ def explore_data(df):
     print()
 
 
-# ---------------------------------------------------------------------------
 # DAY 3 - Clean the data
-# ---------------------------------------------------------------------------
 # Real-world data is often messy - missing values, duplicate rows, wrong
 # data types, etc. This function checks for those problems and fixes them.
 # Even if this particular dataset turns out clean, it's good habit to always
@@ -103,9 +96,7 @@ def clean_data(df):
     return df
 
 
-# ---------------------------------------------------------------------------
 # DAY 4 - Analyze the sales data
-# ---------------------------------------------------------------------------
 # This is the core of the project: turning raw rows into useful numbers.
 # We calculate more than 3 metrics as required by the brief.
 def analyze_sales(df):
@@ -145,9 +136,8 @@ def analyze_sales(df):
     return results
 
 
-# ---------------------------------------------------------------------------
 # DAY 5 - Build a clean, formatted report
-# ---------------------------------------------------------------------------
+
 # Instead of just dumping numbers, we format everything nicely so it's
 # actually readable. The report is printed to the screen AND saved as a
 # markdown file so it can be shared or viewed on GitHub.
@@ -209,9 +199,7 @@ def build_report(results, df):
     return "\n".join(lines)
 
 
-# ---------------------------------------------------------------------------
-# Main - runs the whole pipeline
-# ---------------------------------------------------------------------------
+# main function
 def main():
     file_path = "sales_data.csv"
 
